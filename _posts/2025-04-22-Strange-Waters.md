@@ -33,7 +33,7 @@ The breeze had changed, the birds could sense a storm
 The fire dwindled, the nets laid bare\
 The fish were few, just stagnant air\
 Ambition was low, tensions were high\
-For one of them, there was no one to care
+The ensuing conflict now difficult to pacify
 
 One day the ship was gone\
 Remaining food and water also taken\
