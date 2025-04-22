@@ -27,7 +27,7 @@ The island somehow became home
 
 A game started, initially for fun\
 A game of pretence, a game no one won\
-Was this how life will be\
+Is this how life had become\
 The breeze had changed, the birds could sense a storm
 
 The fire dwindled, the nets laid bare\
