@@ -1,14 +1,12 @@
 ---
 layout: post
 title: Strange Waters
-subtitle: First attempt at a peom
+subtitle: First attempt at a poem
 tags: [fiction]
 comments: true
 mathjax: true
 author: Utsav
 ---
-
-**Strange waters**
 
 There once was a traveller\
 Who hadn’t left his home\
