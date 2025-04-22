@@ -1,3 +1,13 @@
+---
+layout: post
+title: Strange Waters
+subtitle: First attempt at a peom
+tags: [fiction]
+comments: true
+mathjax: true
+author: Utsav
+---
+
 **Strange waters**
 
 There once was a traveller\
