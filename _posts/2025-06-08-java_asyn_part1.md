@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Async : Part 1
+title: Java Async - Part 1
 subtitle: For us procrastinators!
 tags: [tech]
 comments: true
