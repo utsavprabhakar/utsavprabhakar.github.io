@@ -29,15 +29,15 @@ WHAT?
 #### Clearing the fog
 JavaScripts has something called `WebAPIs` which contain the `DOM`, `setTimeout`, `ajax` etc. 
 
-JS is a single threaded runtime which means it has a single call stack. 
+JS is a single threaded runtime which means it has a single call stack.\ 
 One thread == one call stack == one thing at a time!
 
-**What happens when things are slow?**
+**What happens when things are slow?**\
 IF no threads, we have to wait till it is done. The problem is because we are writing it in browser. While the thread is doing work, the browser remains stuck (you cant click anywhere).
 
 This is NOT ideal..
 
-**Asynchronous callbacks**
+**Asynchronous callbacks**\
 Here is a function, call me maybe?
 
 #### **Concurrency and the event loop**
@@ -60,10 +60,10 @@ $.get('url', function cb(data) { conosle.log(data);})
 ```
 
  `setTimeout` is funny. If you run `setTimeout` multiple times with timeout duration as 1 seconds, it doesnt mean all the `setTimeouts` will be executing their functions at 1 second. 
- They are queued in the _callback queue_ and is dequeued one by one and pushed to the call stack. 
- SetTimeout timeout is not the guaranteed time. It is the minimum time. 
+ They are queued in the _callback queue_ and is dequeued one by one and pushed to the call stack.\
+ `SetTimeout` timeout is not the guaranteed time. It is the minimum time. 
 
-DONT PUT SHITTY SLOW CODE ON THE STACK(MAIN THREAD
+> DONT PUT SHITTY SLOW CODE ON THE STACK(MAIN THREAD
 
 #### **Promises**
 Promises in JS represents in the eventual completion (or failure) of an async operation and its resulting value. It is a placeholder for a value that might not be available immediately. 
@@ -118,7 +118,7 @@ We can use Try/Catch around calling async functions.
 
 #### Promises and Event loop?
 
-**Event loop: JS's concurrency engine**
+**Event loop: JS's concurrency engine**\
 JS has two queues -> task queue and the microtask queue. 
 When the call stack is empty, EventLoop prioritises executing all tasks in the microtask queue before moving to the callback queue.
 
@@ -149,19 +149,19 @@ Q4) **Promises function go into microtask queue. Anything else associated with t
 - `MutationObserver` callbacks also go into the microtask queue, allowing for efficient observation and reaction to changes in the DOM.
 - In Node.js, `process.nextTick()` and `queueMicrotask()` are also used to queue microtasks
 
-Q5) **Why cant callbacks jump in front of the line as soon as they are complete?** 
+Q5) **Why cant callbacks jump in front of the line as soon as they are complete?**\
 This is just how JS works. 
 - _Execute all synchronous code first, no exceptions!_
 - No interruption: If a Promise does resolve quickly, its callback would not be executed until the call stack is empty and sync code is completely executed.
 - This is mainly done to ensure long-running tasks dont block the main thread, keeping user interface working and responsive.
 
-Q6) **How are things different in Java?**
+Q6) **How are things different in Java?**\
 In Java, there is support for _Multithreading_ allowing us to execute multiple tasks truly in parallel.
 Thread pools are used to handle async operations. Alows main thread to keep working.
 Non blocking waits: If a `CompletableFuture` is waiting on a dependent future or async computation, it does not block the waiting thread. The completion of the op triggers the execution of dependent code on a separate thread.
 
-Q7) **If we do separate calls to multiple Promises, where exactly are all of them being executed?** 
-WebAPIs!
+Q7) **If we do separate calls to multiple Promises, where exactly are all of them being executed?**\
+WebAPIs~\
 When you initiate an asynchronous operation like a network request using `fetch` or `XMLHttpRequest` (which `fetch` often utilizes internally), JavaScript doesn't handle the actual fetching itself on the main thread. It gives this role to the Browser. Browser (or Node.js environment in Node.js) is written in low level c++ and capable of performing these tasks, potentially using multiple threads. 
 Actual network call is being handled by the browser networking stack, separate from JS thread.
 
